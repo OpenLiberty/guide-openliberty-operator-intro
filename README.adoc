@@ -1,4 +1,4 @@
-// Copyright (c) 2022, 2023 IBM Corporation and others.
+// Copyright (c) 2022, 2025 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -11,7 +11,7 @@
 :page-duration: 30 minutes
 :page-releasedate: 2022-04-05
 :page-description: Explore how to deploy a microservice to Kubernetes using Open Liberty Operator.
-:page-tags: ['Kubernetes', 'Docker', 'Cloud'] 
+:page-tags: ['kubernetes', 'docker', 'cloud']
 :page-permalink: /guides/{projectid}
 :page-related-guides: ['cloud-openshift', 'cloud-openshift-operator', 'okd']
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/prod
@@ -463,6 +463,28 @@ curl -L https://raw.githubusercontent.com/OpenLiberty/open-liberty-operator/main
 kubectl delete -f https://raw.githubusercontent.com/OpenLiberty/open-liberty-operator/main/deploy/releases/1.2.1/kubectl/openliberty-app-crd.yaml
 
 kubectl delete -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.3/cert-manager.yaml
+```
+
+Perform the following steps to return your environment to a clean state.
+
+. Point the Docker daemon back to your local machine:
++
+[role=command]
+```
+eval $(minikube docker-env -u)
+```
+. Stop your Minikube cluster:
++
+[role=command]
+```
+minikube stop
+```
+
+. Delete your cluster:
++
+[role=command]
+```
+minikube delete
 ```
 endif::[]
 
