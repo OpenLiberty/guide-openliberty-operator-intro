@@ -179,17 +179,38 @@ Ensure that you are in the `start` directory and run the following command to pa
 
 // Static guide instruction
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
 ```
-mvn clean package
+mvnw.cmd clean package
 ```
+--
+
+[.tab_content.mac_section]
+--
+[role='command']
+```
+./mvnw clean package
+```
+--
+
+[.tab_content.linux_section]
+--
+[role='command']
+```
+./mvnw clean package
+```
+--
 endif::[]
 
 // Cloud hosted guide instruction
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-openliberty-operator-intro/start
-mvn clean package
+./mvnw clean package
 ```
 endif::[]
 
