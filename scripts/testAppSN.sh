@@ -5,7 +5,7 @@ mvn clean package
 
 kubectl api-resources --api-group=apps.openliberty.io | grep "apps.openliberty.io"
 
-docker pull icr.io/appcafe/open-liberty:full-java11-openj9-ubi
+docker pull icr.io/appcafe/open-liberty:full-java25-openj9-ubi
 docker build -t system:1.0-SNAPSHOT system/.
 
 
